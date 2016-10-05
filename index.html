@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Ajax fácil com jQuery</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style type="text/css">
+        div {
+            width: 600px;
+            height: 600px;
+            display: inline-block;
+        }
+        img {
+          margin-bottom: 10px;
+          margin-right: 10px;
+          
+        }
+        input {
+          left: 5%;
+          top: 10%;
+          position: absolute;
+          margin-bottom: 10px;
+        }
+    </style>
+  </head>
+  <body>
+      <input type="button" value="AJAX!">
+      <div id="resposta"></div>
+  </body>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script type="text/javascript">
+      $('input').click(function(){ //Quando clicado no elemento input
+          $.getJSON("https://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",
+                    {
+                       tags: "sky",
+                       tagmode: "any",
+                       format: "json"
+                    },
+                    function(data){
+                        $.each(data.items, function(i, item){
+                          $("#resposta").append($("<img/>").attr("src",item.media.m));
+                          if(i == 5) return false;
+                        });
+                    }
+          );
+            
+      });
+  </script>
+</html>
