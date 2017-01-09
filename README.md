@@ -1,1 +1,1 @@
-# test with Ajax and Flickr API 
+test with Ajax and Flickr API 
