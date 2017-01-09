@@ -1,2 +1,1 @@
-# page1
-test
+# test with Ajax and Flickr API 
