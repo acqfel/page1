@@ -45,4 +45,21 @@
             
       });
   </script>
+  <script>
+    var settings = {
+      "async": true,
+      "crossDomain": true,
+      "url": "https://api.yelp.com/v3/businesses/search?term=delis&latitude=37.786882&longitude=-122.399972",
+      "method": "GET",
+      "headers": {
+        "authorization": "Bearer -j23jxVsNcLnFcxNc-W4wMTHRxl5EBXocwb_83CWpkiRlEWM6AyfDIanoKSCn_9nrWXcRu2bA3Vi1NOXH6IwgKp-O-x2KXCZzjucUkFTccPPPmjHpuZReJAjIQ-XWnYx",
+        "cache-control": "no-cache",
+        "postman-token": "8852e940-5d6a-12ee-7a38-9ea15507ebcd"
+      }
+    }
+
+    $.ajax(settings).done(function (response) {
+      console.log(response);
+    });
+  </script>
 </html>
